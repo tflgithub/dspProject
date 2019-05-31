@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/mine_login_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="28dp"
+        android:text="绑定"
+        android:textColor="@color/blackText"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/mine_mobile_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="90dp"
+        android:background="@color/transparent"
+        android:gravity="bottom"
+        android:hint="请输入手机号码"
+        android:maxLength="20"
+        android:maxLines="1"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:textColor="@color/blackText"
+        android:textSize="@dimen/textSize28"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/mine_bind_mobile_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="为了您的安全，请绑定手机号"
+        android:padding="8dp"
+        android:textColor="@color/colorAccent"
+        android:gravity="center"
+        android:textSize="@dimen/textSize18"
+        app:layout_constraintTop_toBottomOf="@id/mine_mobile_edit" />
+
+
+    <Button
+        android:id="@+id/mine_update_mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:padding="25dp"
+        android:text="清空"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/textSize14"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/mine_mobile_edit"
+        app:layout_constraintTop_toBottomOf="@id/mine_login_title" />
+
+
+    <com.luzuzu.mine.widget.PhoneCode
+        android:id="@+id/mine_login_phone_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="28dp"
+        android:paddingRight="28dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/mine_bind_mobile_tip" />
+
+
+    <com.luzuzu.library.widget.ObserverButton
+        android:id="@+id/ob_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="获取验证码"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/blackText"
+        android:textSize="@dimen/textSize16"
+        app:defaultBgResource="@color/light_white"
+        app:defaultTextColor="@color/gray"
+        app:pressBgResource="@color/colorAccent"
+        app:pressTextColor="@color/white" />
+
+
+</android.support.constraint.ConstraintLayout>

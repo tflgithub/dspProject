@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/main_comment_avatar"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:src="@drawable/touxiang_moren" />
+
+    <TextView
+        android:id="@+id/main_comment_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_toLeftOf="@id/main_comment_praise_num"
+        android:layout_toRightOf="@id/main_comment_avatar"
+        android:lines="1"
+        android:text="乐滋滋"
+        android:textColor="@color/blackText"
+        android:textSize="@dimen/textSize14" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/main_comment_avatar"
+        android:layout_below="@id/main_comment_name"
+        android:text="两小时前"
+        android:layout_marginLeft="5dp"
+        android:textSize="@dimen/textSize12" />
+
+    <TextView
+        android:id="@+id/main_comment_praise_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
+        android:drawableTop="@drawable/ic_like_small"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="12"
+        android:textSize="@dimen/textSize12" />
+
+    <TextView
+        android:id="@+id/main_comment_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/main_comment_name"
+        android:layout_below="@id/main_comment_praise_num"
+        android:layout_marginTop="5dp"
+        android:text="这个很好这个很好这个很好这个很好这个很好这个很好这个很好这个很好这个很好这个很好这个很好"
+        android:textColor="@color/blackText2"
+        android:textSize="@dimen/textSize12" />
+
+    <TextView
+        android:id="@+id/main_btn_comment_reply"
+        android:layout_width="wrap_content"
+        android:background="@drawable/corner_gray_shape"
+        android:textColor="@color/white"
+        android:text="回复"
+        android:layout_alignLeft="@id/main_comment_name"
+        android:textSize="@dimen/textSize9"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:layout_below="@id/main_comment_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

@@ -1,0 +1,81 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.luzuzu.mine.ui.user.fragment.UserEditFragment">
+
+    <include layout="@layout/common_toolbar"/>
+
+
+    <ImageView
+        android:id="@+id/mine_user_avatar"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_margin="30dp"
+        android:src="@drawable/icon_xitongtongzhi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mine_toolbar" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="78dp"
+        android:src="@drawable/icon_camera"
+        app:layout_constraintRight_toRightOf="@id/mine_user_avatar"
+        app:layout_constraintTop_toBottomOf="@id/mine_toolbar" />
+
+
+    <com.luzuzu.library.widget.MultipleItemView
+        android:id="@+id/mine_miv_nick_name"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/mine_user_avatar"
+        app:leftText="昵称"
+        app:rightText="乐滋滋"
+        app:showEdtText="true"
+        app:leftTextColor="@color/blackText1"
+        app:rightTextColor="@color/blackText2"
+        app:showLeftIcon="false"
+        app:showRightIcon="false"
+        app:showTopLine="false" />
+
+
+    <com.luzuzu.library.widget.MultipleItemView
+        android:id="@+id/mine_miv_sex"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:leftTextColor="@color/blackText1"
+        app:rightTextColor="@color/blackText2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintTop_toBottomOf="@id/mine_miv_nick_name"
+        app:leftText="性别"
+        app:rightText="男"
+        app:showRightIcon="false"
+        app:showLeftIcon="false"
+        app:showTopLine="false" />
+
+
+    <com.luzuzu.library.widget.MultipleItemView
+        android:id="@+id/mine_miv_signature"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintTop_toBottomOf="@id/mine_miv_sex"
+        app:leftTextColor="@color/blackText1"
+        app:rightTextColor="@color/blackText2"
+        app:leftText="个性签名"
+        app:rightText="暂时没有"
+        app:showEdtText="true"
+        app:showLeftIcon="false"
+        app:showRightIcon="false"
+        app:showTopLine="false" />
+
+</android.support.constraint.ConstraintLayout>

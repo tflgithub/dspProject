@@ -1,0 +1,40 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "config.gradle"
+buildscript {
+
+    repositories {
+        google()
+        jcenter {
+            url "http://jcenter.bintray.com/"
+        }
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+        //黄油刀
+        classpath "com.jakewharton:butterknife-gradle-plugin:8.4.0"
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        //数据库GreenDAO
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+        // 注册MobSDK
+        classpath "com.mob.sdk:MobSDK:2018.0319.1724"
+        //bugly
+        classpath "com.tencent.bugly:tinker-support:1.1.5"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter {
+            url "http://jcenter.bintray.com/"
+        }
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_up_man_coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.UpManActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/main_up_man_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/up_man_collapsing_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/white"
+            app:expandedTitleMarginBottom="16dp"
+            app:expandedTitleMarginStart="16dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/main_up_man_head_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="80dp"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7">
+
+
+                <ImageView
+                    android:id="@+id/main_up_man_avatar"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="50dp"
+                    android:src="@drawable/touxiang_moren"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/main_up_man_follower_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toRightOf="@id/main_up_man_avatar"
+                    app:layout_constraintTop_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/main_up_man_follower"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="300万"
+                        android:textColor="@color/blackText2"
+                        android:textSize="@dimen/textSize16" />
+
+                    <TextView
+                        android:id="@+id/main_up_man_follower_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:gravity="right"
+                        android:text="粉丝"
+                        android:textColor="@color/blackText2"
+                        android:textSize="@dimen/textSize12" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/main_up_man_follow_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toRightOf="@id/main_up_man_follower_btn">
+
+                    <TextView
+                        android:id="@+id/main_up_man_follow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="17dp"
+                        android:text="300万"
+                        android:textColor="@color/blackText2"
+                        android:textSize="@dimen/textSize16" />
+
+                    <TextView
+                        android:id="@+id/main_up_man_follow_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:text="关注"
+                        android:textColor="@color/blackText2"
+                        android:textSize="@dimen/textSize12" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/main_up_man_btn_follow"
+                    android:layout_width="190dp"
+                    android:layout_height="31dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/shape_btn_accent_color"
+                    android:text="关注"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize12"
+                    app:layout_constraintStart_toStartOf="@id/main_up_man_follower_btn"
+                    app:layout_constraintTop_toBottomOf="@id/main_up_man_follow_btn" />
+
+                <TextView
+                    android:id="@+id/main_up_man_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:paddingLeft="16dp"
+                    android:text="这个家伙很懒，什么都没有留下"
+                    android:textSize="@dimen/textSize12"
+                    app:layout_constraintTop_toBottomOf="@id/main_up_man_avatar" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <include layout="@layout/customer_tool_bar"/>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <TextView
+            android:id="@+id/main_up_man_line"
+            style="@style/HorizontalLine"
+            android:layout_width="match_parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawablePadding="8dp"
+            android:drawableRight="@drawable/ic_hot"
+            android:padding="20dp"
+            android:text="作品"
+            android:textColor="@color/blackText"
+            android:textSize="16dp" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <org.yczbj.ycrefreshviewlib.YCRefreshView
+        android:id="@+id/up_man_video_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:paddingBottom="17dp"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/main_follow_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:src="@drawable/ic_nav_black"/>
+
+    <com.luzuzu.main.widget.custemerTablayout.SlidingScaleTabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tl_indicator_gravity="BOTTOM"
+        app:tl_tab_gravity="Bottom"
+        app:tl_tab_marginBottom="8dp"
+        app:tl_tab_padding="16dp"
+        app:tl_textBold="SELECT"
+        app:tl_textSelectColor="@color/colorAccent"
+        app:tl_textSelectSize="@dimen/textSize20"
+        app:tl_textUnSelectColor="@color/gray"
+        app:tl_textUnSelectSize="@dimen/textSize16" />
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.luzuzu.mine.ui.settting.SettingActivity">
+
+    <include layout="@layout/common_toolbar" />
+
+    <com.luzuzu.library.widget.MultipleItemView
+        android:id="@+id/mine_miv_auto_push"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:layout_constraintTop_toBottomOf="@id/mine_toolbar"
+        app:leftText="自动推送开关"
+        app:leftTextColor="@color/blackText2"
+        app:rightIcon="@drawable/switch_btn_selector"
+        app:showLeftIcon="false"
+        app:showRightIcon="true"
+        app:showTopLine="false" />
+
+
+    <com.luzuzu.library.widget.MultipleItemView
+        android:id="@+id/mine_miv_auto_play"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="55dp"
+        app:layout_constraintTop_toBottomOf="@id/mine_miv_auto_push"
+        app:leftText="4G流量自动播放开关"
+        app:leftTextColor="@color/blackText2"
+        app:rightIcon="@drawable/switch_btn_selector"
+        app:showLeftIcon="false"
+        app:showRightIcon="true"
+        app:showTopLine="false" />
+
+
+    <com.luzuzu.library.widget.MultipleItemView
+        android:id="@+id/mine_miv_clear_cache"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:layout_constraintTop_toBottomOf="@id/mine_miv_auto_play"
+        app:leftText="缓存清理"
+        app:leftTextColor="@color/blackText2"
+        app:rightIcon="@drawable/icon_general_back"
+        app:rightText="400M"
+        app:showBottomLine="false"
+        app:showLeftIcon="false"
+        app:showRightIcon="true"
+        app:showTopLine="false" />
+
+
+    <Button
+        android:id="@+id/mine_setting_login_out"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/btn_accent_gradient_radius"
+        android:text="退出登录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dp15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mine_miv_clear_cache" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My Library</string>
+    <string name="easy_permissions">该APP需要您允许拍摄照片和访问设备上的文件的权限</string>
+</resources>

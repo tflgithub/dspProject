@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.luzuzu.mine">
+
+    <application>
+        <activity android:name=".ui.account.LoginActivity" />
+        <activity android:name=".ui.OrderActivity"></activity>
+    </application>
+
+</manifest>

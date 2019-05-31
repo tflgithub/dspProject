@@ -1,0 +1,103 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            }
+        }
+        //防止编译的时候oom、GC
+        dexOptions {
+            javaMaxHeapSize "4g"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            buildConfigField "boolean", "IS_DEBUG", "false"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField "boolean", "IS_DEBUG", "true"
+        }
+    }
+
+    //jdk1.8
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //把implementation 用api代替,它是对外部公开的, 所有其他的module就不需要添加该依赖
+    api rootProject.ext.dependencies["appcompat-v7"]
+    api rootProject.ext.dependencies["recyclerview-v7"]
+    api rootProject.ext.dependencies["support-v4"]
+    api rootProject.ext.dependencies["constraint-layout"]
+    api rootProject.ext.dependencies["design"]
+    api rootProject.ext.dependencies["annotations"]
+    //MultiDex分包方法
+    api rootProject.ext.dependencies["multidex"]
+    api rootProject.ext.dependencies["butterknife"]
+    api rootProject.ext.dependencies["arouter_api"]
+    api rootProject.ext.dependencies["arouter_annotation"]
+    //eventbus 发布/订阅事件总线
+    api rootProject.ext.dependencies["eventbus"]
+    //网络
+    api rootProject.ext.dependencies["logging-interceptor"]
+    api rootProject.ext.dependencies["okhttp"]
+    api rootProject.ext.dependencies["retrofit"]
+    api rootProject.ext.dependencies["retrofit-converter-gson"]
+    api rootProject.ext.dependencies["retrofit-adapter-rxjava"]
+    //rx
+    api rootProject.ext.dependencies["rxandroid"]
+    api rootProject.ext.dependencies["rxjava"]
+    //图片
+    api rootProject.ext.dependencies["glide"]
+    api(rootProject.ext.dependencies["glide-transformations"]) {
+        exclude module: 'glide'
+    }
+    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+    //数据库
+    api rootProject.ext.dependencies["greenDao"]
+    //权限
+    api rootProject.ext.dependencies["easypermissions"]
+    //控件
+    api rootProject.ext.dependencies["tablayout"]
+    api rootProject.ext.dependencies["YCRecycleViewLib"]
+    api rootProject.ext.dependencies["YCBaseAdapterLib"]
+    api rootProject.ext.dependencies["YCRefreshViewLib"]
+    api rootProject.ext.dependencies["YCUtilsLib"]
+    //黄油刀
+    annotationProcessor rootProject.ext.dependencies["butterknife_compiler"]
+    //Arouter路由
+    annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
+    api rootProject.ext.dependencies["utilcode"]
+    //视频缓存
+    //compile project(':lib_push')
+    //今日头条适配
+    implementation 'me.jessyan:autosize:1.0.1'
+}
